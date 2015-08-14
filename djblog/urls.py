@@ -17,5 +17,9 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
+    # 管理员入口
     url(r'^admin/', include(admin.site.urls)),
+
+    # blog应用的url入口
+    url(r'^$', include('blog.urls')),
 ]

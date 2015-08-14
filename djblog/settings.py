@@ -88,7 +88,7 @@ DATABASES = {
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
 # 设置语言
-LANGUAGE_CODE = 'zh-cn'
+LANGUAGE_CODE = 'zh-hans'
 # 设置时区
 TIME_ZONE = 'Asia/Shanghai'
 
@@ -106,6 +106,6 @@ STATIC_URL = '/static/'
 
 # 静态文件目录
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
+    # os.path.join(BASE_DIR, "static"),
 )
 

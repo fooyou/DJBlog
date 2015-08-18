@@ -21,5 +21,5 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
     # blog应用的url入口
-    url(r'^$', include('blog.urls')),
+    url(r'^blog/', include('blog.urls')),
 ]

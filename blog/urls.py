@@ -11,5 +11,5 @@ urlpatterns = [
     url(r'^$', 'blog.views.index', name='index'),
 
     # 对于post，我们需要通过id访问，所以写了个正则表达式
-    url(r'^post/(?P<pk>\d+)/$', 'blog.views.post', name='post'),
+    url(r'^(?P<pk>\d+)/$', 'blog.views.post', name='post'),
 ]

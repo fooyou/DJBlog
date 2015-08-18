@@ -37,7 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
+    'blog', # 我们的Blog应用
+    'linaro_django_pagination', # 分页功能插件
 )
 
 MIDDLEWARE_CLASSES = (
@@ -49,6 +50,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'linaro_django_pagination.middleware.PaginationMiddleware', # 分页插件的额中间件
 )
 
 ROOT_URLCONF = 'djblog.urls'
@@ -63,6 +65,8 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.template.context_processors.media',
+                'django.template.context_processors.i18n',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -108,4 +112,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     # os.path.join(BASE_DIR, "static"),
 )
+
+# 分页每页显示的数值
+PAGINATION_DEFAULT_PAGINATION = 2 # 默认值是20
 

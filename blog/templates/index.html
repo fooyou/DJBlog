@@ -1,4 +1,8 @@
 {% extends "base.html" %}
+
+<!-- 加载分页插件 -->
+{% load pagination_tags %}
+
 {% block title %}
     {% if is_category %}"{{ cate_name|safe }}"文章列表{% else %}首页{% endif %}
 {% endblock %}
@@ -10,9 +14,15 @@
     <span class="label label-info>{{ posts|length }}"</span>篇
 </div>
 {% endif %}
+
+<!-- 添加自动分页到项目遍历之前 -->
+{% autopaginate posts %}
+
 {% for post in posts %}
 {% include "_post.html" %}
 {% endfor %}
+<!-- 显示分页 -->
+{% paginate %}
 {% endblock %}
 
 {% block rightside %}

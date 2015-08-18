@@ -1,7 +1,20 @@
 {% extends "base.html" %}
-{% block title %}首页{% endblock %}
+{% block title %}
+    {% if is_category %}"{{ cate_name|safe }}"文章列表{% else %}首页{% endif %}
+{% endblock %}
+
 {% block content %}
+{% if is_category %}
+<div class="well well-sm">
+    "{{ cate_name|safe }}"分类中共有
+    <span class="label label-info>{{ posts|length }}"</span>篇
+</div>
+{% endif %}
 {% for post in posts %}
 {% include "_post.html" %}
 {% endfor %}
+{% endblock %}
+
+{% block rightside %}
+{% include "_side.html" %}
 {% endblock %}

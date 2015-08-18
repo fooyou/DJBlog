@@ -12,4 +12,7 @@ urlpatterns = [
 
     # 对于post，我们需要通过id访问，所以写了个正则表达式
     url(r'^(?P<pk>\d+)/$', 'blog.views.post', name='post'),
+
+    # 添加分类栏
+    url(r'^category/(?P<pk>\d+)/$', 'blog.views.category', name='category'),
 ]
